@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package terminators;
-import robocode.HitRobotEvent;
-import robocode.Robot;
-import robocode.ScannedRobotEvent;
+
+import robocode.*;
+
 
 import java.awt.*;
 
@@ -14,7 +8,7 @@ import java.awt.*;
  *
  * @author SICT Computers
  */
-public class Terminators extends Robot{
+public class Terminators extends AlphaBot{
 
 	boolean peek; // Don't turn if there's a robot there
 	double moveAmount; // How much to move
@@ -24,8 +18,8 @@ public class Terminators extends Robot{
 	 */
 	public void run() {
 		// Set colors
-		setBodyColor(Color.black);
-		setGunColor(Color.black);
+		setBodyColor(Color.red);
+		setGunColor(Color.red);
 		setRadarColor(Color.orange);
 		setBulletColor(Color.cyan);
 		setScanColor(Color.cyan);
@@ -70,6 +64,22 @@ public class Terminators extends Robot{
 		}
 	}
 
+	/*public void onScannedRobot() {
+		// Turn gun to point at the scanned robot
+		turnGunTo(scannedAngle);
+
+		// Fire!
+		fire(2);
+	}*/
+
+	/**
+	 * We were hit!  Turn and move perpendicular to the bullet,
+	 * so our seesaw might avoid a future shot.
+	 */
+	/*public void onHitByBullet() {
+		// Move ahead 100 and in the same time turn left papendicular to the bullet
+		turnAheadLeft(100, 90 );
+	}*/
 	/**
 	 * onScannedRobot:  Fire!
 	 */
@@ -84,4 +94,4 @@ public class Terminators extends Robot{
 	}
 }
     
-}
+
